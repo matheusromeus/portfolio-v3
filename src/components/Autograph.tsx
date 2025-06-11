@@ -3,8 +3,14 @@ import React from "react";
 
 const Autograph = () => {
   return (
-    <div className="w-40 h-40">
-      {/* <Image src="/assets/kevz.svg" alt="Kevin Roy" fill /> */}
+    <div className="relative flex flex-grow px-20 justify-center items-center">
+      <Image
+        src="/assets/kevz.svg"
+        alt="Kevin Roy"
+        width={1200}
+        height={1200}
+        className=""
+      />
     </div>
   );
 };

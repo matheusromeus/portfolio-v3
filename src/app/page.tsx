@@ -4,10 +4,10 @@ import Intro from "@/components/Intro";
 
 export default function Home() {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Header />
       <Autograph />
-      {/* <Intro /> */}
+      <Intro />
     </div>
   );
 }
