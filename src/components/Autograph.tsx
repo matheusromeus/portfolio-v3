@@ -3,7 +3,7 @@ import React from "react";
 
 const Autograph = () => {
   return (
-    <div className="relative flex flex-grow px-20 justify-center items-center">
+    <div className="relative flex flex-grow px-20 justify-center items-center select-none">
       <Image
         src="/assets/kevz.svg"
         alt="Kevin Roy"
