@@ -1,15 +1,15 @@
-import Autograph from "@/components/Autograph";
-import Header from "@/components/Header";
+"use client";
+
+import { useState } from "react";
+import SplashScreen from "@/components/SplashScreen";
 
 export default function Home() {
+  const [splashDone, setSplashDone] = useState(false);
+
   return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
-      <Autograph />
-      {/* <Intro /> */}
-      <div className="absolute bottom-0 flex items-center justify-center mb-2 w-full">
-        <h3>sorry, work in progress.</h3>
-      </div>
-    </div>
+    <>
+      <SplashScreen onComplete={() => setSplashDone(true)} />
+      <div className="min-h-screen" />
+    </>
   );
 }
