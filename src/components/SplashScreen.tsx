@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Phase = "drawing" | "filling" | "fading" | "done";
 
@@ -10,20 +10,22 @@ interface SplashScreenProps {
 
 export default function SplashScreen({ onComplete }: SplashScreenProps) {
   const [phase, setPhase] = useState<Phase>("drawing");
+  const onCompleteRef = useRef(onComplete);
+  onCompleteRef.current = onComplete;
 
   useEffect(() => {
     const t1 = setTimeout(() => setPhase("filling"), 2300);
     const t2 = setTimeout(() => setPhase("fading"), 2800);
     const t3 = setTimeout(() => {
       setPhase("done");
-      onComplete();
+      onCompleteRef.current();
     }, 3400);
     return () => {
       clearTimeout(t1);
       clearTimeout(t2);
       clearTimeout(t3);
     };
-  }, [onComplete]);
+  }, []);
 
   if (phase === "done") return null;
 
