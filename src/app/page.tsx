@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import SplashScreen from "@/components/SplashScreen";
+import HomeContent from "@/components/HomeContent";
 
 export default function Home() {
   const [splashDone, setSplashDone] = useState(false);
@@ -9,7 +10,7 @@ export default function Home() {
   return (
     <>
       {!splashDone && <SplashScreen onComplete={() => setSplashDone(true)} />}
-      <div className="min-h-screen" />
+      {splashDone && <HomeContent />}
     </>
   );
 }
