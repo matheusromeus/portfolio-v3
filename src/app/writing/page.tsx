@@ -1,26 +1,24 @@
-"use client";
-
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
-export default function HomeContent() {
-  const [mounted, setMounted] = useState(false);
+const articles = [
+  { title: "note to self.", year: "2024", slug: "note-to-self" },
+];
 
-  useEffect(() => {
-    const t = setTimeout(() => setMounted(true), 80);
-    return () => clearTimeout(t);
-  }, []);
-
+export default function Writing() {
   return (
     <div
-      className={`min-h-screen flex flex-col bg-[#0a0a0a] text-[#ededed] transition-opacity duration-700 ease-out ${
-        mounted ? "opacity-100" : "opacity-0"
-      }`}
+      className="min-h-screen flex flex-col bg-[#0a0a0a] text-[#ededed]"
       style={{ fontFamily: "var(--font-geist-sans)" }}
     >
       {/* Header */}
       <header className="grid grid-cols-3 items-center px-8 pt-7 pb-2">
-        <div />
+        <Link
+          href="/"
+          className="text-sm text-[#ededed]/40 hover:text-[#ededed] transition-colors duration-200 w-fit"
+          style={{ fontFamily: "var(--font-geist-mono)" }}
+        >
+          ←
+        </Link>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="234.953 258.502 1050.474 265.186"
@@ -34,7 +32,30 @@ export default function HomeContent() {
         <div />
       </header>
 
-      <main className="flex-1" />
+      {/* Article list */}
+      <main className="flex-1 px-8 pt-14 pb-8">
+        <div className="max-w-xl mx-auto">
+          <div className="border-t border-[#ededed]/10">
+            {articles.map((article) => (
+              <Link
+                key={article.slug}
+                href={`/writing/${article.slug}`}
+                className="group flex items-baseline justify-between py-6 border-b border-[#ededed]/10 hover:border-[#ededed]/25 transition-colors duration-200"
+              >
+                <span className="text-base font-[400] group-hover:underline underline-offset-[5px] decoration-1 decoration-[#ededed]/50 transition-all duration-200">
+                  {article.title}
+                </span>
+                <span
+                  className="text-[0.6rem] text-[#ededed]/35 ml-8 shrink-0 tracking-wide"
+                  style={{ fontFamily: "var(--font-geist-mono)" }}
+                >
+                  {article.year}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </main>
 
       {/* Footer */}
       <footer
@@ -42,12 +63,6 @@ export default function HomeContent() {
         style={{ fontFamily: "var(--font-geist-mono)" }}
       >
         <p>designer by heart, developer by hands.</p>
-        <Link
-          href="/writing"
-          className="mt-2 inline-block text-[#ededed]/30 hover:text-[#ededed] transition-colors duration-200"
-        >
-          digital bleeding
-        </Link>
       </footer>
     </div>
   );
