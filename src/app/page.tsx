@@ -1,24 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import SplashScreen from "@/components/SplashScreen";
 import HomeContent from "@/components/HomeContent";
 
-export default function Home() {
-  // null = not yet checked, false = show splash, true = skip splash
-  const [splashDone, setSplashDone] = useState<boolean | null>(null);
+let splashPlayed = false;
 
-  useEffect(() => {
-    const played = sessionStorage.getItem("splashPlayed");
-    setSplashDone(played ? true : false);
-  }, []);
+export default function Home() {
+  const [splashDone, setSplashDone] = useState(splashPlayed);
 
   const handleSplashComplete = () => {
-    sessionStorage.setItem("splashPlayed", "1");
+    splashPlayed = true;
     setSplashDone(true);
   };
-
-  if (splashDone === null) return null;
 
   return (
     <>

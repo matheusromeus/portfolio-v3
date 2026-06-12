@@ -51,7 +51,7 @@ export default function NoteToSelf() {
             <p>
               And if you don&apos;t push past this phase, how will you ever reach there? You can
               never be worthy of the good things in life if you have never done the dirty work.
-              Remove that crutch of &quot;other people&quot;. Be the engineer. Be the designer. Of you.
+              Do it for the love of the game. Remove that crutch of &quot;other people&quot;. Be the engineer. Be the designer. Of you.
             </p>
           </div>
         </div>
