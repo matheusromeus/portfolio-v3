@@ -35,8 +35,10 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
     transition: phase === "filling" ? "fill 0.4s ease-in" : "none",
     stroke: "#ffffff",
     strokeDasharray: 1,
-    strokeDashoffset: 1,
-    animation: `svg-draw ${duration}s ease-in-out ${delay}s forwards`,
+    strokeDashoffset: phase === "drawing" ? 1 : 0,
+    animation: phase === "drawing"
+      ? `svg-draw ${duration}s ease-in-out ${delay}s forwards`
+      : "none",
   });
 
   return (
