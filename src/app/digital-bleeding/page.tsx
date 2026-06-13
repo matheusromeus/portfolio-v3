@@ -39,7 +39,7 @@ export default function Writing() {
             {articles.map((article) => (
               <Link
                 key={article.slug}
-                href={`/writing/${article.slug}`}
+                href={`/digital-bleeding/${article.slug}`}
                 className="group flex items-baseline justify-between py-6 border-b border-[#ededed]/10 hover:border-[#ededed]/25 transition-colors duration-200"
               >
                 <span className="text-base font-[400] group-hover:underline underline-offset-[5px] decoration-1 decoration-[#ededed]/50 transition-all duration-200">
@@ -62,7 +62,7 @@ export default function Writing() {
         className="text-center py-5 text-[0.6rem] text-[#ededed] tracking-wide"
         style={{ fontFamily: "var(--font-geist-mono)" }}
       >
-        <p>designer by heart, developer by hands.</p>
+        <p>digital bleeding.</p>
       </footer>
     </div>
   );

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function HomeContent() {
@@ -38,16 +37,11 @@ export default function HomeContent() {
 
       {/* Footer */}
       <footer
-        className="text-center py-5 text-[0.6rem] text-[#ededed] tracking-wide"
+        className="text-center py-5 text-[0.66rem] text-[#ededed] tracking-wide"
         style={{ fontFamily: "var(--font-geist-mono)" }}
       >
-        <p>designer by heart, developer by hands.</p>
-        <Link
-          href="/writing"
-          className="mt-2 inline-block text-[#ededed]/30 hover:text-[#ededed] transition-colors duration-200"
-        >
-          digital bleeding
-        </Link>
+        <p>&quot;An idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It can grow to define or destroy you.&quot;</p>
+        <p className="mt-1">- DiCaprio, Inception (2010)</p>
       </footer>
     </div>
   );

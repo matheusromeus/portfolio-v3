@@ -8,7 +8,7 @@ export default function NoteToSelf() {
     >
       <header className="grid grid-cols-3 items-center px-8 pt-7 pb-2">
         <Link
-          href="/writing"
+          href="/digital-bleeding"
           className="text-sm text-[#ededed]/40 hover:text-[#ededed] transition-colors duration-200 w-fit"
           style={{ fontFamily: "var(--font-geist-mono)" }}
         >
@@ -61,7 +61,7 @@ export default function NoteToSelf() {
         className="text-center py-5 text-[0.6rem] text-[#ededed] tracking-wide"
         style={{ fontFamily: "var(--font-geist-mono)" }}
       >
-        <p>designer by heart, developer by hands.</p>
+        <p>digital bleeding.</p>
       </footer>
     </div>
   );
