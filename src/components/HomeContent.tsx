@@ -21,8 +21,7 @@ const writing = [
 ];
 
 const socials = [
-  { label: "Twitter", href: "https://twitter.com" },
-  { label: "GitHub", href: "https://github.com" },
+  { label: "Twitch", href: "https://www.twitch.tv/matheusromeus" },
 ];
 
 export default function HomeContent() {
@@ -118,25 +117,16 @@ export default function HomeContent() {
           {/* More */}
           <Section label="More">
             <p className="text-sm text-[#ededed]/55 leading-relaxed">
-              See more of my work on{" "}
+              Show me love on{" "}
               <a
                 href={socials[0].href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#ededed]/80 underline underline-offset-[3px] decoration-[#ededed]/30 hover:decoration-[#ededed] transition-colors duration-200"
               >
-                {socials[0].label}
-              </a>{" "}
-              and more of my code on{" "}
-              <a
-                href={socials[1].href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#ededed]/80 underline underline-offset-[3px] decoration-[#ededed]/30 hover:decoration-[#ededed] transition-colors duration-200"
-              >
-                {socials[1].label}
+                Twitch
               </a>
-              .
+              !
             </p>
           </Section>
         </div>
