@@ -117,7 +117,7 @@ export default function HomeContent() {
           {/* More */}
           <Section label="More">
             <p className="text-sm text-[#ededed]/55 leading-relaxed">
-              Show me love on{" "}
+              Show me ♥ on{" "}
               <a
                 href={socials[0].href}
                 target="_blank"
