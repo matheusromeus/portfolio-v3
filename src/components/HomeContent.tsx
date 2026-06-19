@@ -2,13 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import ScrambleText from "./ScrambleText";
 
 const projects = [
-  {
-    name: "digital bleeding",
-    desc: "A place where I bleed thoughts into words.",
-    href: "/digital-bleeding",
-  },
   {
     name: "portfolio v3",
     desc: "This site. Built with Next.js and too much coffee.",
@@ -20,7 +16,7 @@ const writing = [
   {
     title: "note to self.",
     desc: "A letter I needed to write more than read.",
-    href: "/digital-bleeding/note-to-self",
+    href: "/note-to-self",
   },
 ];
 
@@ -167,11 +163,13 @@ function Section({
 }) {
   return (
     <section>
-      <h2
-        className="text-[0.7rem] uppercase tracking-[0.12em] text-[#ededed]/40 mb-5"
-        style={{ fontFamily: "var(--font-geist-mono)" }}
-      >
-        {label}
+      <h2 className="mb-5">
+        <ScrambleText
+          text={label}
+          revealEvery={6}
+          className="inline-block text-[0.7rem] uppercase tracking-[0.12em] text-[#ededed]/40 hover:text-[#ededed]/70 transition-colors duration-200 cursor-default"
+          style={{ fontFamily: "var(--font-geist-mono)" }}
+        />
       </h2>
       {children}
     </section>
